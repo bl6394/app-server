@@ -15,15 +15,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-//@EnableJpaRepositories
 @EnableTransactionManagement
 public class PersistenceConfig {
 
     @Bean
     public DataSource dataSource() {
-
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        return builder.setType(EmbeddedDatabaseType.H2).build();
+        return builder.build();
     }
 
     @Bean

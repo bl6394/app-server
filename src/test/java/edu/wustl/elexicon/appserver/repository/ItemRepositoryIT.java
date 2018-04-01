@@ -21,11 +21,9 @@ public class ItemRepositoryIT {
 
     @Test
     public void givenGenericEntityRepository_whenSaveAndRetreiveEntity_thenOK() {
-        Item item = itemRepository.save(new Item("test"));
-        Optional<Item> foundItem = itemRepository.findById(item.getWid());
-
+        Optional<Item> foundItem = itemRepository.findById(1L);
         assertNotNull(foundItem);
-        assertEquals(item, foundItem.get());
+        assertEquals("a", foundItem.get().getWord());
     }
 
 
