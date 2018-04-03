@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @RestController
 public class ItemController {
@@ -18,7 +19,11 @@ public class ItemController {
 
     @RequestMapping("/item/{wid}")
     public Item item(@PathVariable @NotNull @DecimalMin("0") Long wid){
-        System.out.println("Wid:" +  wid);
         return itemRepository.getOne(wid);
+    }
+
+    @RequestMapping("/item")
+    public List<Item> getItems(){
+        return itemRepository.findAll();
     }
 }
