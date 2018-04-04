@@ -3,11 +3,12 @@ package edu.wustl.elexicon.appserver.domain;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table (name = "item")
-final public class Item {
+final public class Item implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
