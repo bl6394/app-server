@@ -9,14 +9,10 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 @SpringBootApplication
-public class AppServerApplication extends SpringBootServletInitializer {
+public class AppServerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AppServerApplication.class, args);
 	}
 
-	@Override
-	public void onStartup(ServletContext sc) throws ServletException {
-		sc.addListener(new RequestContextListener());
-	}
 }

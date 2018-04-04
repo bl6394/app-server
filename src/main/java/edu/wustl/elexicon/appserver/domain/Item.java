@@ -11,7 +11,7 @@ import java.util.Objects;
 final public class Item implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "wid")
     private Long wid;
 
